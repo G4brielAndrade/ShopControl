@@ -1,87 +1,121 @@
-# 🛒 ShopControl
+# Sistema de Gestão de Loja
 
-O **ShopControl** é um sistema desktop de gestão de loja desenvolvido em Python, utilizando PyQt5/PySide6 e MySQL. O projeto simula um mini ERP completo, permitindo o gerenciamento de clientes, produtos, estoque e vendas através de uma interface gráfica criada no Qt Designer.
+Este é um sistema desktop completo para gestão de lojas, desenvolvido em Python com PySide6 para a interface gráfica e MySQL para o banco de dados. Ele inclui funcionalidades para controle de clientes, produtos, fornecedores, compras, vendas e estoque.
 
----
+## 🎯 Funcionalidades
 
-## 📸 Demonstração
+- **Clientes**: Cadastro, listagem, edição e exclusão.
+- **Produtos**: Cadastro, controle de preço e estoque, associação com fornecedor.
+- **Fornecedores**: Cadastro completo, relacionamento com produtos.
+- **Compras**: Registro de compras, atualização automática do estoque.
+- **Vendas**: Registro de vendas, baixa automática no estoque, associação com cliente.
+- **Estoque**: Controle automático, alertas de estoque baixo no dashboard.
 
-<img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/08df8258-5f8d-4b62-9a78-44444876afbb" />
+## 🛠️ Tecnologias
 
+- **Linguagem**: Python 3.x
+- **Interface Gráfica**: PySide6 (Qt for Python)
+- **Banco de Dados**: MySQL
+- **Arquitetura**: MVC (Model-View-Controller)
 
-### 🖥️ Tela inicial
-![Tela inicial] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/73335e97-4442-42df-bd03-f336976afb46" />
+## 📁 Estrutura do Projeto
 
-### 👤 Cadastro de clientes
-![Cadastro de clientes] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/96b313d4-8e16-4168-95fa-c080b9d9e944" />
-
-### 📦 Controle de produtos
-![Produtos] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/ae39db3f-7bfe-4210-befc-fc5048667b2f" />
-
-### 🧾 Tela de vendas
-![Vendas] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/565f68c5-5fb1-4ad9-bdd5-d79764506db0" />
-
----
-
-## ⚙️ Tecnologias utilizadas
-
-- Python
-- PyQt5 / PySide6
-- Qt Designer
-- MySQL
-- VS Code
-
----
-
-## 📂 Estrutura do projeto
-ShopControl/
-│
-├── src/ # Código-fonte Python
-├── ui/ # Arquivos .ui do Qt Designer
-├── database/ # Scripts SQL e conexão com MySQL
-├── docs/ # Imagens e documentação
-│ └── img/
-├── main.py # Arquivo principal
+```
+store_management_system/
+├── controllers/
+│   ├── cliente_controller.py
+│   ├── movimentacao_controller.py
+│   └── produto_controller.py
+├── database/
+│   ├── connection.py
+│   └── schema.sql
+├── models/
+│   └── models.py
+├── ui/ (para arquivos .ui gerados pelo Qt Designer, se usados)
+├── utils/ (para utilitários diversos, se necessário)
+├── views/
+│   ├── main_window.py
+│   ├── cliente_view.py
+│   ├── produto_view.py
+│   ├── fornecedor_view.py
+│   ├── venda_view.py
+│   └── compra_view.py
+├── main.py
 └── README.md
+```
 
+- `controllers/`: Contém a lógica de negócios e a interação com o banco de dados.
+- `database/`: Contém o script de conexão com o MySQL e o script SQL para criação do esquema.
+- `models/`: Define as classes de modelo de dados.
+- `ui/`: Diretório para armazenar arquivos `.ui` gerados pelo Qt Designer (não implementado diretamente neste projeto, mas a estrutura está pronta).
+- `utils/`: Para funções utilitárias gerais.
+- `views/`: Contém as classes da interface gráfica (telas).
+- `main.py`: Ponto de entrada da aplicação.
 
----
+## ▶️ Como Rodar o Projeto
 
-## 🚀 Funcionalidades
+### 1. Pré-requisitos
 
-- Cadastro de clientes
-- Cadastro de produtos
-- Controle de estoque
-- Registro de vendas
-- Interface gráfica intuitiva
-- Integração com banco de dados MySQL
+Certifique-se de ter o Python 3.x e o MySQL Server instalados em sua máquina.
 
----
+### 2. Configuração do Banco de Dados
 
-## 🧠 Objetivo do projeto
+1. **Crie o banco de dados e as tabelas**: 
+   - Acesse seu servidor MySQL (ex: via `mysql -u root -p`).
+   - Execute o script `database/schema.sql` para criar o banco de dados `store_management_system` e todas as tabelas necessárias, além de popular com dados de exemplo.
+   ```bash
+   mysql -u root -p < store_management_system/database/schema.sql
+   ```
+   - **Importante**: Se você usa um usuário e senha diferentes para o MySQL, edite o arquivo `database/connection.py` com suas credenciais.
 
-Este projeto foi desenvolvido com foco em prática de:
-- Desenvolvimento desktop com Python
-- Integração com banco de dados relacional
-- Construção de interfaces com Qt Designer
-- Estruturação de um sistema estilo ERP
+### 3. Instalação das Dependências
 
----
+Navegue até o diretório raiz do projeto (`store_management_system`) e instale as dependências Python:
 
-## 📌 Como executar
+```bash
+cd store_management_system
+pip install PySide6 mysql-connector-python
+```
 
-1. Clone o repositório:
-git clone https://github.com/G4brielAndrade/shopcontrol.git
+### 4. Execução da Aplicação
 
-2.Instale as dependências:
-pip install pyqt5 mysql-connector-python
+Após instalar as dependências e configurar o banco de dados, você pode rodar a aplicação:
 
-3. Configure o banco de dados MySQL:
-Execute os scripts dentro da pasta /database
-
-4. Execute o sistema:
+```bash
 python main.py
+```
 
+## 🎨 Uso do Qt Designer (Opcional)
 
-👨‍💻 Autor
-Gabriel Andrade
+Embora as interfaces neste projeto tenham sido criadas programaticamente para demonstração, você pode usar o Qt Designer para criar arquivos `.ui` visualmente. Para integrá-los:
+
+1. **Crie seu design no Qt Designer**: Salve o arquivo como `minha_tela.ui` no diretório `ui/`.
+2. **Converta o arquivo .ui para .py**: Use `pyside6-uic` (ou `pyuic5` para PyQt5):
+   ```bash
+   pyside6-uic ui/minha_tela.ui -o views/ui_minha_tela.py
+   ```
+3. **Importe e use na sua View**: Na sua classe de View, você pode carregar a interface gerada:
+   ```python
+   from PySide6.QtWidgets import QWidget
+   from views.ui_minha_tela import Ui_MinhaTela
+
+   class MinhaTelaView(QWidget, Ui_MinhaTela):
+       def __init__(self):
+           super().__init__()
+           self.setupUi(self)
+           # Conecte seus sinais e slots aqui
+   ```
+
+## 🚀 Sugestões de Melhorias Futuras
+
+- **Autenticação de Usuários**: Adicionar um sistema de login e controle de acesso.
+- **Relatórios**: Geração de relatórios de vendas, estoque, etc.
+- **Busca e Filtros**: Implementar funcionalidades de busca e filtragem mais avançadas nas tabelas.
+- **Internacionalização**: Suporte a múltiplos idiomas.
+- **Persistência de Configurações**: Salvar configurações do usuário (ex: tamanho da janela).
+- **Testes Unitários**: Adicionar testes para a lógica de negócios e controladores.
+- **Empacotamento**: Criar um executável standalone (ex: com PyInstaller).
+- **Melhorias na UI/UX**: Refinar o design e a usabilidade com estilos CSS (QSS) ou ícones.
+- **Validação de Entrada**: Validações mais robustas para campos de formulário (ex: regex para CPF/CNPJ).
+
+---
