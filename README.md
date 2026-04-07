@@ -10,20 +10,16 @@ O **ShopControl** é um sistema desktop de gestão de loja desenvolvido em Pytho
 
 
 ### 🖥️ Tela inicial
-![Tela inicial]( <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/73335e97-4442-42df-bd03-f336976afb46" />
-)
+![Tela inicial] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/73335e97-4442-42df-bd03-f336976afb46" />
 
 ### 👤 Cadastro de clientes
-![Cadastro de clientes]( <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/96b313d4-8e16-4168-95fa-c080b9d9e944" />
-)
+![Cadastro de clientes] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/96b313d4-8e16-4168-95fa-c080b9d9e944" />
 
 ### 📦 Controle de produtos
-![Produtos]( <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/ae39db3f-7bfe-4210-befc-fc5048667b2f" />
-)
+![Produtos] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/ae39db3f-7bfe-4210-befc-fc5048667b2f" />
 
 ### 🧾 Tela de vendas
-![Vendas]( <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/565f68c5-5fb1-4ad9-bdd5-d79764506db0" />
-)
+![Vendas] <img width="1002" height="732" alt="image" src="https://github.com/user-attachments/assets/565f68c5-5fb1-4ad9-bdd5-d79764506db0" />
 
 ---
 
